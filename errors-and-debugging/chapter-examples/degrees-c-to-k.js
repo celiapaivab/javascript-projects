@@ -1,4 +1,4 @@
-const input = require('readline-sync');
+let input = require('readline-sync');
 
 let degreesC = input.question('Temp in degrees C: ');
 degreesC = Number(degreesC);
