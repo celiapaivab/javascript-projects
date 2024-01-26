@@ -1,7 +1,18 @@
-function reverse(str) {
-   return str.split('').reverse().join('');
-}
+
+// function reverse(str) {
+//    return str.split('').reverse().join('');
+// }
+
+// function isPalindrome(str) {
+//    return reverse(str) === str;
+// }
+
 
 function isPalindrome(str) {
-   return reverse(str) === str;
+   let reversed = str.split('').reverse().join('');
+    console.log (reversed)
+    return reversed === str;
+  
 }
+
+console.log(isPalindrome('macaco'))
