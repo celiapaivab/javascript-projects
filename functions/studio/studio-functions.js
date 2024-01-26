@@ -100,7 +100,13 @@ funPhrase(str)
 // 5. Use a template literal to print, “The area is ____ cm^2.”
 
 function findAreaRectangle (length,width){
-    let area = length * width;
+    let area = "";
+    if(width !== undefined){
+        area = length * width;
+    } else {
+        area = length * length;
+    }
+    console.log(`The area is ${area} cm^2.`)
     return area
 }
 

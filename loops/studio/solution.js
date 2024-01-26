@@ -15,20 +15,28 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   
   /// Part A #2: Write a ``for`` loop inside this function
   /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
-j = 0;
-  for (i = 0; i < pantry.length; i++){
-    meals [i] = pantry[i][j];
+
+  for (let i = 0; i < numMeals; i++){
+    let meal = [];
+    for (let j = 0; j < pantry.length; j++){
+      meal.push(pantry[j][i]);
+    }
+    meals.push(meal)
   }
-    
   return meals;
 }
 
+// console.log(mealAssembly(protein, grains, veggies, beverages, desserts,6))
 
 function askForNumber() {
-  numMeals = input.question("How many meals would you like to make?");
+  numMeals = input.question("How many meals would you like to make? ");
+  numMeals = Number(numMeals)
   
   /// CODE YOUR SOLUTION TO PART B here ///
-
+  while(numMeals <= 0 || numMeals > 6){
+    numMeals = input.question('Invalid input. Please enter a number from 1 - 6: ');
+    numMeals = Number(numMeals);
+  }
   return numMeals;
 }
 
@@ -56,8 +64,8 @@ function runProgram() {
   /// UNCOMMENT the next two lines to test your ``askForNumber`` solution ///
   /// Tip - don't test this part until you're happy with your solution to part A #2 ///
   
-  // let mealsForX = mealAssembly(protein, grains, veggies, beverages, desserts, askForNumber());
-  // console.log(mealsForX);
+  let mealsForX = mealAssembly(protein, grains, veggies, beverages, desserts, askForNumber());
+  console.log(mealsForX);
 
     /// TEST PART C HERE ///
   /// UNCOMMENT the remaining commented lines and change the password1 and password2 strings to ensure your code is doing its job ///

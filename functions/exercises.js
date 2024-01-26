@@ -64,6 +64,7 @@ console.log(makeLine(5));
 
 
 // makeSpaceLine(numSpaces, numChars) function
+let singleChar = ""
 function makeSpaceLine(numSpaces, numChars) {
     let space = "";
     let char = "";
@@ -71,7 +72,11 @@ function makeSpaceLine(numSpaces, numChars) {
         space += " ";
     }
     for (i = 0; i < numChars; i++){
-        char += "#";
+        if (singleChar != ""){
+            char += singleChar;
+        } else {
+            char += "#";
+        }
     }
     let spaceLine = space + char + space;
     return spaceLine;
@@ -86,7 +91,6 @@ function makeIsoscelesTriangle(height) {
     } 
     return isosceles.slice(0, -1);
 }
-
 // function makeIsoscelesTriangle(height) {
 //     let triangle = '';
 //     for (let i = 0; i < height; i++) {
@@ -99,6 +103,16 @@ console.log(makeIsoscelesTriangle(5));
 // Diamonds
 
 // makeDiamond(height) function
-// function(){
-    
+function makeDiamond(height){
+    let triangle = makeIsoscelesTriangle(height);
+    let reversed = makeIsoscelesTriangle(height).split('').reverse().join('');
+    return triangle + "\n" + reversed;
+}
+console.log(makeDiamond(5));
+
+// function reverse(height) {
+//     let reversed = makeIsoscelesTriangle(height).split('').reverse().join('');
+//     return reversed;
 // }
+
+// console.log(reverse(5));
