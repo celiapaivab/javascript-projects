@@ -1,1 +1,19 @@
 /* Start adding your styling below! */ 
+body {
+    background-color: yellow;
+}
+p {
+    color: green;
+}
+h1 {
+    font-size: 36px;
+}
+.headingAligment {
+    text-align: center;
+}
+#cool-text{
+    color: blue;
+}
+#elementColor{
+    color: magenta;
+}
